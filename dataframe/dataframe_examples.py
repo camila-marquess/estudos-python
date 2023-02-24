@@ -6,6 +6,7 @@ import pandas as pd
 '''
 
 Creating a dataframe from two lists
+The zip() function returns an iterator of tuples based on the iterable objects.
 
 '''
 
@@ -19,4 +20,36 @@ df = pd.DataFrame(products_information)
 
 df.head()
 
+# %%
+
+''''
+
+Adding a column by applying a function in other column
+
+'''
+
+def add_shipping(price, shipping_price):
+    result = price + shipping_price
+    return result 
+
+df['shipping_price'] = add_shipping(df['price'], 10)
+
+df.head()
+
+# %%
+
+'''
+
+Using df.iterrows()
+
+'''
+
+def add_shipping(price, shipping_price):
+  for index, row in df.iterrows():
+    result = price + shipping_price 
+  return result
+
+df['shipping_price'] = add_shipping(df['price'], 10)
+
+df.head()
 # %%
