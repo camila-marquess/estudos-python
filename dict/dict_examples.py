@@ -120,3 +120,18 @@ final_value = toolz.valmap(total_value, prices)
 print(final_value)
 
 # %%
+
+'''
+
+Merging dictionaries
+
+'''
+
+from collections import ChainMap
+
+fruit = {'apple': 0.40, 'orange': 0.35}
+vegetable = {'pepper': 0.20, 'onion': 0.55}
+
+chained_dict = ChainMap(fruit, vegetable)
+
+print(chained_dict.keys())
