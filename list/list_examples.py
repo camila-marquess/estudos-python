@@ -2,6 +2,8 @@
 
 PRODUCTS_LIST = ['book', 'notebook', 'bottle', 'headphone']
 
+NUMBERS_LIST = [[1, 2, 3, 4, 5], [12, 13, 23], [10, 20, 30], [11, 22, 33], [12, 24, 36]]
+
 # %%
 '''
 
@@ -103,5 +105,58 @@ new_list = products_string.split(' ')
 
 print(new_list)
 
+# %%
 
+'''
 
+Transforming a list of lists into a unique list
+
+'''
+
+new_numbers_list = []
+
+for element in NUMBERS_LIST:
+  for item in element: 
+    new_numbers_list.append(item)
+    
+print(new_numbers_list)
+    
+# %%
+
+'''
+
+Transforming a list of lists into a unique list
+using list comprehension
+
+'''
+
+new_numbers_list = [item for element in NUMBERS_LIST for item in element]
+
+print(new_numbers_list)
+# %%
+
+'''
+
+Using sort method
+
+'''
+
+new_numbers_list.sort()
+
+print(new_numbers_list)
+
+# %%
+
+'''
+
+Using sorted method
+The difference between sorted() and sort()
+is that sort will update the original list
+
+'''
+
+sorted_number_list = sorted(new_numbers_list)
+
+print(sorted_number_list)
+
+# %%
